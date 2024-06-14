@@ -1,0 +1,23 @@
+---
+name: Test-Split-Miner
+author: xiaoxuan
+version: 1
+description: Execute Default-parameter Optimized Evaluation with Split Miner on Public Logs.
+
+services:
+  Test_Split_Container:
+    image: openjdk:8-jre-slim
+    build:
+      context: .    # 确保context路径正确，即使Dockerfile在项目的当前目录
+    volumes:
+      - .:/app      # 将当前目录挂载到容器的/app目录
+
+flow:
+  - name: Test Split
+    container: Test_Split_Container
+    commands:
+      - type: console
+        command: java -Xmx16G -Xss10G -jar /app/tkde_benchmark_v2.0.jar -miners 2 -metrics 2 11 12 16
+        detach: true
+        note: Running Split Miner
+
