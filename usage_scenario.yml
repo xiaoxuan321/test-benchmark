@@ -17,7 +17,7 @@ flow:
     container: Test_Split_Container
     commands:
       - type: console
-        command: java -Xmx16G -Xss10G -jar /app/tkde_benchmark_v2.0.jar -miners 2 -metrics 2 11 12 16
+        command: java -Xmx10G -Xss5G -jar /app/tkde_benchmark_v2.0.jar -miners 2 -metrics 2 11 12 16
         detach: true
         note: Running Split Miner
 

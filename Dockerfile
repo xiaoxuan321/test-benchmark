@@ -5,4 +5,4 @@ FROM openjdk:8-jre-slim
 WORKDIR /app
 
 # 复制当前目录下的所有文件到容器的/app 目录
-COPY . /app
+COPY tkde_benchmark_v2.0.jar /app/tkde_benchmark_v2.0.jar
